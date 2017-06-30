@@ -8,10 +8,14 @@ func main() {
 
 func countTo100() {
 	// like a while
-	// for condition {}
+	// for condition {
+
+	//}
 
 	// infinite loop
-	// for {}
+	// for {
+
+	//}
 
 	// to loop over an array, slice, string, or map or reading from a channel
 	// for key, value := range myMap
