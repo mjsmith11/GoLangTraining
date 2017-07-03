@@ -11,6 +11,6 @@ func stringAsBytes() {
 	fmt.Println(intro)
 	fmt.Println([]byte(intro))
 
-	fmt.Println(len(intro))
+	fmt.Println(len(intro)) //number of bytes not characters.
 	fmt.Println(len([]byte(intro)))
 }
