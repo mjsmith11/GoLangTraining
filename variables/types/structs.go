@@ -6,7 +6,7 @@ type person struct {
 	name string
 	age  int
 }
-
+// *** cannot use make with a struct
 func main() {
 	p1 := person{"James", 20}
 	fmt.Println(p1)
