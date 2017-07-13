@@ -2,10 +2,11 @@ package main
 
 import "fmt"
 
-type person struct {
+type person struct { // unexported
 	name string
 	age  int
 }
+
 // *** cannot use make with a struct
 func main() {
 	p1 := person{"James", 20}
