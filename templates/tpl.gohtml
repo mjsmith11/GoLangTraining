@@ -10,6 +10,8 @@
 <ul>
     {{range .}}
     <li>{{.}}</li>
+    {{else}} <!--if there isn't anything to range over-->
+    <li>NO ITEMS</li> 
     {{end}}
 </ul>
 </body>
