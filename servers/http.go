@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"log"
 	"net"
 	"strings"
@@ -19,9 +20,21 @@ func handleConn(conn net.Conn) {
 		if i == 0 {
 			method := strings.Fields(ln)[0] //divided by whitespace
 			fmt.Println("WE PRINTED THIS - METHOD : ", method)
+		} else {
+			if ln == "" {
+				break
+			}
 		}
 		i++
 	}
+
+	//response
+	body := "hello world 2"
+
+	io.WriteString(conn, "HTTP/1.1 200 OK\r\n")            //status line
+	fmt.Fprintf(conn, "Content-Length: %d\r\n", len(body)) //headers with another option for writng to connection
+	io.WriteString(conn, "\r\n")
+	io.WriteString(conn, body)
 }
 
 func main() {
