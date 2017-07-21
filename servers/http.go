@@ -42,8 +42,9 @@ func handleConn(conn net.Conn) {
 	</html>	
 	`
 
-	io.WriteString(conn, "HTTP/1.1 200 OK\r\n")            //status line
-	fmt.Fprintf(conn, "Content-Length: %d\r\n", len(body)) //headers with another option for writng to connection
+	io.WriteString(conn, "HTTP/1.1 200 OK\r\n")                     //status line
+	fmt.Fprintf(conn, "Content-Length: %d\r\n", len(body))          //headers with another option for writng to connection
+	fmt.Fprintf(conn, "Content-Type: text/html; charset=utf-8\r\n") //content type could be text/plain
 	io.WriteString(conn, "\r\n")
 	io.WriteString(conn, body)
 }
