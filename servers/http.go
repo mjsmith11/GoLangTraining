@@ -29,7 +29,18 @@ func handleConn(conn net.Conn) {
 	}
 
 	//response
-	body := "hello world 2"
+	body := `
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<strong>Hello World</strong>
+	</body>
+	</html>	
+	`
 
 	io.WriteString(conn, "HTTP/1.1 200 OK\r\n")            //status line
 	fmt.Fprintf(conn, "Content-Length: %d\r\n", len(body)) //headers with another option for writng to connection
