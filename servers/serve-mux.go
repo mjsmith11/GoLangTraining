@@ -15,6 +15,9 @@ func youUp(res http.ResponseWriter, req *http.Request) {
 
 func main() {
 	mux := http.NewServeMux()
+	//will match the most specific
+	// /hello matches upTown
+	// /cat/hello matches youUp
 	mux.HandleFunc("/", upTown)
 	mux.HandleFunc("/cat/", youUp)
 
