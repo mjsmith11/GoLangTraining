@@ -7,7 +7,7 @@ import (
 
 type MyHandler int
 
-func (h MyHandler) ServeHTTP(res http.ResponseWriter, req *http.Request) {
+func (h MyHandler) ServeHTTP(res http.ResponseWriter, req *http.Request) { //implementing Handler requires this methoid
 	io.WriteString(res, req.RequestURI+"\n") // print request url
 	io.WriteString(res, req.URL.Path)
 }
