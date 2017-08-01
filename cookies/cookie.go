@@ -19,5 +19,6 @@ func getAndSetCookie(res http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/", getAndSetCookie)
+	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.ListenAndServe(":9000", nil)
 }
